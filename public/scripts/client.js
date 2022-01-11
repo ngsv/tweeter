@@ -6,6 +6,13 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
+//Escape Function
+const escape = function (str) {
+  let div = document.createElement("div");
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+};
+
 const createTweetElement = (tweet) => {
   const $tweet = $(`
     <article class="tweet-article">
@@ -18,7 +25,7 @@ const createTweetElement = (tweet) => {
         <h3 class="tweet-article-handle">${tweet.user.handle}</h3>
       </header>
 
-      <p class="tweet-article-tweet">${tweet.content.text}</p>
+      <p class="tweet-article-tweet">${escape(tweet.content.text)}</p>
       <hr>
 
       <footer class="tweet-footer">
@@ -43,7 +50,7 @@ const createTweetElement = (tweet) => {
 const renderTweets = (tweets) => {
   for (let i = 0; i < tweets.length; i++) {
     let $tweet = createTweetElement(tweets[i]);
-    $('#tweets-container').append($tweet);
+    $('#tweets-container').prepend($tweet);
   }
 };
 
@@ -58,6 +65,33 @@ const loadTweets = () => {
     .fail(error => console.log(`Error: ${error.message}`));
 };
 
+const postTweet = (data) => {
+  if (data === "text=" || data === null) {
+    alert("Error: Tweet is empty!");
+  } else if (data.length > 140) {
+    alert("Error: Tweet exceeds the 140 character limit!");
+  } else {
+
+    $.ajax({
+      url: '/tweets',
+      method: 'POST',
+      data: data,
+    })
+      .done(() => {
+        $.ajax({
+          url: '/tweets',
+          method: 'GET',
+        })
+          .done((tweets) => {
+            let postedTweet = [tweets[tweets.length - 1]];
+            renderTweets(postedTweet);
+          })
+          .fail(error => console.log(`Error: ${error.message}`));
+      })
+      .fail(error => console.log(`Error: ${error.message}`));
+  }
+};
+
 loadTweets();
 
 
@@ -66,20 +100,10 @@ $(document).ready(function() {
 
   $('#new-tweet-form').on('submit', function(event) {
     event.preventDefault();
-    // const inputBox = $(this).children('#tweet-text');
-    // const newTweet = inputBox.val();
-    // console.log(newTweet);
     console.log($(this).serialize());
-    // console.log(event);
-    //
+
     let data = $(this).serialize();
-    $.ajax({
-      url: '/tweets',
-      method: 'POST',
-      data: data
-    })
-      .done(results => console.log(results))
-      .fail(error => console.log(`Error: ${error.message}`));
+    postTweet(data);
 
   });
 });

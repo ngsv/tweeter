@@ -45,7 +45,7 @@
 
     <header class="navHeader">
       <div class="headerImg">
-          <img src="/images/profile-hex.png">
+          <img src="/images/profile-hex.png" width="225px">
       </div>
       <br>
       <div class="headerName">
@@ -57,6 +57,11 @@
     <main class="container">
 
       <section class="new-tweet">
+
+        <!-- Error Messages -->
+        <h3 class="error-msg msg1">⚠ Tweet is too long, please limit to 140 characters! ⚠</h3>
+        <h3 class="error-msg msg2">⚠ Tweet is empty! ⚠</h3>
+
         <h2>Compose Tweet</h2>
         <form id="new-tweet-form" action="/tweets" method="POST">
           <label for="tweet-text"><strong>What are you humming about?</strong></label>
@@ -69,29 +74,7 @@
       </section>
 
       <section id="tweets-container">
-        <article class="tweet-article">
-          <header class="tweet-header">
-            <h3 class="tweet-article-name">Avatar. Name.</h3>
-            <h3 class="tweet-article-handle">Handle.</h3>
-          </header>
 
-          <p class="tweet-article-tweet">Sample tweet</p>
-          <hr>
-
-          <footer class="tweet-footer">
-            <p class="footer-date">
-              10 days ago
-            </p>
-
-            <div class="footer-icons">
-              <i class="fas fa-flag"></i>
-              <i class="fas fa-retweet"></i>
-              <i class="fas fa-heart"></i>
-            </div>
-
-          </footer>
-
-        </article>
       </section>
 
     </main>

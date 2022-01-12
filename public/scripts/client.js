@@ -66,10 +66,11 @@ const loadTweets = () => {
 };
 
 const postTweet = (data) => {
+  $(".error-msg").slideUp(400);
   if (data === "text=" || data === null) {
-    alert("Error: Tweet is empty!");
+    $(".msg2").delay(400).slideDown(400);
   } else if (data.length > 140) {
-    alert("Error: Tweet exceeds the 140 character limit!");
+    $(".msg1").delay(400).slideDown(400);
   } else {
 
     $.ajax({
@@ -97,6 +98,8 @@ loadTweets();
 
 
 $(document).ready(function() {
+
+  $(".error-msg").hide();
 
   $('#new-tweet-form').on('submit', function(event) {
     event.preventDefault();

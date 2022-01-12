@@ -1,3 +1,5 @@
+@import 'global_val';
+
 article {
   display: block;
   border-style: solid;
@@ -27,7 +29,7 @@ hr {
 }
 
 .tweet-article:hover {
-  box-shadow: 8px 8px #bcc4f7;
+  box-shadow: 8px 8px $shadow-color;
 }
 
 .tweet-header {
@@ -44,7 +46,7 @@ hr {
 
 .tweet-article-handle {
   margin: 0;
-  color: #bcc4f7;
+  color: $shadow-color;
 }
 
 .tweet-user {
@@ -75,7 +77,7 @@ hr {
   align-items: flex-end;
   margin: 0;
   font-size: 15px;
-  color: #4056A1;
+  color: $nav-bg-color;
 }
 
 .fas {

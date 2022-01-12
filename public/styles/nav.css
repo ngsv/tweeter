@@ -12,26 +12,21 @@ nav {
   color: #FFFFFF;
   padding: 0 2em;
 }
-
 nav span {
-  font-family: 'Bungee', cursive;
+  font-family: "Bungee", cursive;
 }
-
-.logo {
+nav .logo {
   margin-top: 20px;
   font-size: 30px;
 }
-
-.navbarText {
+nav .navbarText {
   margin-top: 5px;
 }
-
-.navNewTweet {
+nav .navNewTweet {
   margin: 0;
   margin-top: 0px;
 }
-
-.fa-angle-double-down {
+nav .fa-angle-double-down {
   display: flex;
   margin: 5px 0 0 0;
   color: darkorange;

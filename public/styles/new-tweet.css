@@ -30,7 +30,7 @@
 .footer {
   display: flex;
   justify-content: space-between;
-  font-family: 'Bungee', cursive;
+  font-family: "Bungee", cursive;
   margin-top: 20px;
 }
 

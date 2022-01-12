@@ -1,0 +1,42 @@
+@import 'global_val';
+
+nav {
+  display: flex;
+  position: fixed;
+  top: 0;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+  z-index: 1;
+  height: 80px;
+  width: 100%;
+  background-color: $nav-bg-color;
+  color: $heading-font-color;
+  padding: 0 2em;
+
+  span {
+    font-family: $heading-font;
+  }
+
+  .logo {
+    margin-top: 20px;
+    font-size: 30px;
+  }
+
+  .navbarText {
+    margin-top: 5px;
+  }
+
+  .navNewTweet {
+    margin: 0;
+    margin-top: 0px;
+  }
+
+  .fa-angle-double-down {
+    display: flex;
+    margin: 5px 0 0 0;
+    color: darkorange;
+    justify-content: center;
+  }
+  
+}

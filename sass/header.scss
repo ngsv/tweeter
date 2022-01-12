@@ -1,9 +1,11 @@
+@import 'global_val';
+
 .navHeader {
   height: 425px;
   width: 100%;
   background-image: url("../images/asfalt-dark.png");
-  background-color: orange;
-  color: #FFFFFF;
+  background-color: $header-bg-color;
+  color: $heading-font-color;
 }
 
 .headerImg {

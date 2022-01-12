@@ -6,7 +6,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server/index.js",
-    "local": "./node_modules/nodemon/bin/nodemon.js --watch server -e js server/index.js"
+    "local": "./node_modules/nodemon/bin/nodemon.js --watch server -e js server/index.js",
+    "sass": "./node_modules/sass/sass.js --watch sass:public/styles",
+    "sass-watch": "sass sass:public/styles --watch --poll --no-source-map",
+    "nodemon": "nodemon ./server/index.js --watch server -e js"
   },
   "author": "Lighthouse Labs",
   "license": "ISC",

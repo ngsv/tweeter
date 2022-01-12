@@ -15,6 +15,10 @@ nav {
 nav span {
   font-family: "Bungee", cursive;
 }
+nav button {
+  background: none;
+  border: none;
+}
 nav .logo {
   margin-top: 20px;
   font-size: 30px;
@@ -25,10 +29,26 @@ nav .navbarText {
 nav .navNewTweet {
   margin: 0;
   margin-top: 0px;
+  color: #FFFFFF;
 }
 nav .fa-angle-double-down {
   display: flex;
   margin: 5px 0 0 0;
+  padding: 0;
   color: darkorange;
   justify-content: center;
+}
+nav .bounce {
+  animation: bounce 2.5s infinite;
+}
+@keyframes bounce {
+  50% {
+    transform: translateY(0);
+  }
+  75% {
+    transform: translateY(6px);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }

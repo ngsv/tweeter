@@ -101,12 +101,19 @@ loadTweets();
 $(document).ready(function() {
 
   $(".error-msg").hide();
+  $("#new-tweet").hide();
+
+  $('button[name="composeButton"]').on('click', function(event) {
+    if ($("#new-tweet").is(":visible")) {
+      $("#new-tweet").slideUp(400);
+    } else {
+      $("#new-tweet").slideDown(400);
+      $('#tweet-text').focus();
+    }
+  });
 
   $('#new-tweet-form').on('submit', function(event) {
     event.preventDefault();
-    console.log(this);
-    console.log($(this).serialize());
-
     let data = $(this).serialize();
     postTweet(data);
 

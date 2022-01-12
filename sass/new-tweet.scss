@@ -1,8 +1,12 @@
 @import 'global_val';
 
-.new-tweet {
+#new-tweet {
   width: 100%;
   color: $main-font-color;
+
+  label {
+    font-size: 24px;
+  }
 }
 
 #tweet-text {

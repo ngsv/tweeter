@@ -1,6 +1,9 @@
-.new-tweet {
+#new-tweet {
   width: 100%;
   color: #545149;
+}
+#new-tweet label {
+  font-size: 24px;
 }
 
 #tweet-text {

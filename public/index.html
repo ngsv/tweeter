@@ -38,8 +38,10 @@
         <span>tweeter</span>
       </div>
       <div class="navbarText">
-        <p class="navNewTweet"><strong>Write&nbsp</strong>a new tweet</p>
-        <i class="fas fa-angle-double-down"></i>
+        <button type="button" name="composeButton">
+          <p class="navNewTweet"><strong>Write&nbsp</strong>a new tweet</p>
+          <i class="fas fa-angle-double-down bounce"></i>
+        </button>
       </div>
     </nav>
 
@@ -56,13 +58,12 @@
     <!-- Page-specific (main) content here -->
     <main class="container">
 
-      <section class="new-tweet">
+      <section id="new-tweet">
 
         <!-- Error Messages -->
         <h3 class="error-msg msg1">⚠ Tweet is too long, please limit to 140 characters! ⚠</h3>
         <h3 class="error-msg msg2">⚠ Tweet is empty! ⚠</h3>
 
-        <h2>Compose Tweet</h2>
         <form id="new-tweet-form" action="/tweets" method="POST">
           <label for="tweet-text"><strong>What are you humming about?</strong></label>
           <textarea rows="2" name="text" id="tweet-text"></textarea>

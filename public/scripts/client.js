@@ -103,10 +103,12 @@ $(document).ready(function() {
 
   $('#new-tweet-form').on('submit', function(event) {
     event.preventDefault();
+    console.log(this);
     console.log($(this).serialize());
 
     let data = $(this).serialize();
     postTweet(data);
+    $('#new-tweet-form')[0].reset();
 
   });
 });

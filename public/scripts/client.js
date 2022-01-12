@@ -86,6 +86,7 @@ const postTweet = (data) => {
           .done((tweets) => {
             let postedTweet = [tweets[tweets.length - 1]];
             renderTweets(postedTweet);
+            $('#new-tweet-form')[0].reset();
           })
           .fail(error => console.log(`Error: ${error.message}`));
       })
@@ -108,7 +109,6 @@ $(document).ready(function() {
 
     let data = $(this).serialize();
     postTweet(data);
-    $('#new-tweet-form')[0].reset();
 
   });
 });

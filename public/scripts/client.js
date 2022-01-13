@@ -65,9 +65,9 @@ const loadTweets = () => {
     .fail(error => console.log(`Error: ${error.message}`));
 };
 
-const postTweet = (data) => {
+const postTweet = (data, dataSerialized) => {
   $(".error-msg").slideUp(400);
-  if (data === "text=" || data === null) {
+  if (data === "" || data === null) {
     $(".msg2").delay(400).slideDown(400);
   } else if (data.length > 140) {
     $(".msg1").delay(400).slideDown(400);
@@ -76,17 +76,18 @@ const postTweet = (data) => {
     $.ajax({
       url: '/tweets',
       method: 'POST',
-      data: data,
+      data: dataSerialized,
     })
       .done(() => {
+        //Refetch tweets upon submit without page refresh
         $.ajax({
           url: '/tweets',
           method: 'GET',
         })
           .done((tweets) => {
-            let postedTweet = [tweets[tweets.length - 1]];
+            let postedTweet = [tweets[tweets.length - 1]]; //Fetch only the most recently posted tweet
             renderTweets(postedTweet);
-            $('#new-tweet-form')[0].reset();
+            $('#new-tweet-form')[0].reset(); //Reset compose tweet form upon successful submit
           })
           .fail(error => console.log(`Error: ${error.message}`));
       })
@@ -94,8 +95,7 @@ const postTweet = (data) => {
   }
 };
 
-loadTweets();
-
+loadTweets(); //Load initial tweets
 
 
 $(document).ready(function() {
@@ -104,6 +104,7 @@ $(document).ready(function() {
   $("#new-tweet").hide();
   $("#scrollButton").hide();
 
+  //Hide/show buttons on scroll
   $(window).scroll(function() {
     if ($(this).scrollTop() > 100) {
       $('button[name="composeButton"]').fadeOut();
@@ -114,6 +115,7 @@ $(document).ready(function() {
     }
   }).trigger('scroll');
 
+  //Slides compose tweet up and down when button is clicked
   $('button[name="composeButton"]').on('click', function(event) {
     if ($("#new-tweet").is(":visible")) {
       $("#new-tweet").slideUp(400);
@@ -123,6 +125,7 @@ $(document).ready(function() {
     }
   });
 
+  //Scrolls to top of the page when clicked on focuses on the compose tweet textbox
   $('#scrollButton').on('click', function(event) {
     $("html").animate({ scrollTop: 0 }, "medium");
     $("#new-tweet").slideDown(400);
@@ -130,9 +133,10 @@ $(document).ready(function() {
   });
 
   $('#new-tweet-form').on('submit', function(event) {
-    event.preventDefault();
-    let data = $(this).serialize();
-    postTweet(data);
+    event.preventDefault(); //Prevents page refresh
+    let data = $(this).find('#tweet-text').val();
+    let dataSerialized = $(this).serialize();
+    postTweet(data, dataSerialized);
 
   });
 });

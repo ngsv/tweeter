@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server/index.js",
-    "local": "./node_modules/nodemon/bin/nodemon.js --watch server -e js server/index.js",
+    "local": "nodemon ./node_modules/.bin/nodemon --watch server -e js server/index.js",
+    "local2": "./node_modules/nodemon/bin/nodemon.js --watch server -e js server/index.js",
     "sass": "./node_modules/sass/sass.js --watch sass:public/styles",
     "sass-watch": "sass sass:public/styles --watch --poll --no-source-map",
     "nodemon": "nodemon ./server/index.js --watch server -e js"
@@ -18,7 +19,6 @@
     "chance": "^1.0.2",
     "express": "^4.13.4",
     "md5": "^2.1.0",
-    "requirejs": "^2.3.6",
     "timeago.js": "^4.0.2"
   },
   "devDependencies": {

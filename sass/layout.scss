@@ -36,6 +36,39 @@ main {
   margin: 0 auto;
 }
 
+#scrollButton {
+  position: fixed;
+  right: 40px;
+  bottom: 30px;
+  width: 75px;
+  height: 75px;
+  background-color: red;
+  border: none;
+  text-align: center;
+  justify-content: center;
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+  border-radius: 100%;
+
+  i {
+    margin: 0;
+    padding: 0;
+    font-size: 32px;
+    color: $heading-font-color;
+  }
+
+}
+
+#scrollButton:hover {
+  cursor: pointer;
+
+  i{
+    color: darkorange;
+  }
+
+}
+
 @media screen and (min-width: 1024px) {
 
   body {
@@ -44,7 +77,7 @@ main {
   }
 
   body .container {
-    margin: 150px 50px 0 0;
+    margin: 100px 50px 0 0;
   }
 
   body .navHeader {

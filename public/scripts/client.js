@@ -102,6 +102,17 @@ $(document).ready(function() {
 
   $(".error-msg").hide();
   $("#new-tweet").hide();
+  $("#scrollButton").hide();
+
+  $(window).scroll(function() {
+    if ($(this).scrollTop() > 100) {
+      $('button[name="composeButton"]').fadeOut();
+      $('#scrollButton').fadeIn();
+    } else {
+      $('button[name="composeButton"]').fadeIn();
+      $('#scrollButton').fadeOut();
+    }
+  }).trigger('scroll');
 
   $('button[name="composeButton"]').on('click', function(event) {
     if ($("#new-tweet").is(":visible")) {
@@ -110,6 +121,12 @@ $(document).ready(function() {
       $("#new-tweet").slideDown(400);
       $('#tweet-text').focus();
     }
+  });
+
+  $('#scrollButton').on('click', function(event) {
+    $("html").animate({ scrollTop: 0 }, "medium");
+    $("#new-tweet").slideDown(400);
+    $('#tweet-text').focus();
   });
 
   $('#new-tweet-form').on('submit', function(event) {

@@ -1,18 +1,16 @@
 {
   "name": "tweeter",
   "version": "1.0.0",
-  "description": "A twitter clone by Lighthouse Labs for web bootcamp students to learn front-end dev skillz",
+  "description": "A twitter clone to learn front-end dev skills",
   "main": "server/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server/index.js",
     "local": "nodemon ./node_modules/.bin/nodemon --watch server -e js server/index.js",
-    "local2": "./node_modules/nodemon/bin/nodemon.js --watch server -e js server/index.js",
-    "sass": "./node_modules/sass/sass.js --watch sass:public/styles",
     "sass-watch": "sass sass:public/styles --watch --poll --no-source-map",
     "nodemon": "nodemon ./server/index.js --watch server -e js"
   },
-  "author": "Lighthouse Labs",
+  "author": "Steven Ngov",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.15.2",

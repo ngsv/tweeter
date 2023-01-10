@@ -115,7 +115,7 @@ $(document).ready(function() {
     }
   }).trigger('scroll');
 
-  //Slides compose tweet up and down when button is clicked
+  //Slides up and down when button is clicked
   $('button[name="composeButton"]').on('click', function(event) {
     if ($("#new-tweet").is(":visible")) {
       $("#new-tweet").slideUp(400);

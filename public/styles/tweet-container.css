@@ -27,7 +27,7 @@ hr {
 }
 
 .tweet-article:hover {
-  box-shadow: 8px 8px #bcc4f7;
+  box-shadow: 8px 8px #E8C4CA;
 }
 
 .tweet-header {
@@ -44,7 +44,7 @@ hr {
 
 .tweet-article-handle {
   margin: 0;
-  color: #bcc4f7;
+  color: #E8C4CA;
 }
 
 .tweet-user {
@@ -75,7 +75,7 @@ hr {
   align-items: flex-end;
   margin: 0;
   font-size: 15px;
-  color: #4056A1;
+  color: #5F4B66;
 }
 
 .fas {
@@ -83,5 +83,5 @@ hr {
 }
 
 .fas:hover {
-  color: darkorange;
+  color: #598392;
 }

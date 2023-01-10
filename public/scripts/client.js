@@ -69,18 +69,18 @@ const postTweet = (data, dataSerialized) => {
     $.ajax({
       url: '/tweets',
       method: 'POST',
-      data: dataSerialized,
+      data: dataSerialized
     })
       .done(() => {
-        //Refetch tweets upon submit without page refresh
+        // Refetch tweets upon submit without page refresh
         $.ajax({
           url: '/tweets',
           method: 'GET',
         })
           .done((tweets) => {
-            let postedTweet = [tweets[tweets.length - 1]]; //Fetch only the most recently posted tweet
+            let postedTweet = [tweets[tweets.length - 1]]; // Fetch only the most recently posted tweet
             renderTweets(postedTweet);
-            $('#new-tweet-form')[0].reset(); //Reset compose tweet form upon successful submit
+            $('#new-tweet-form')[0].reset(); // Reset compose tweet form upon successful submit
           })
           .fail(error => console.log(`Error: ${error.message}`));
       })
@@ -88,16 +88,16 @@ const postTweet = (data, dataSerialized) => {
   }
 };
 
-loadTweets(); //Load initial tweets
+loadTweets(); // Load initial tweets
 
 
 $(document).ready(function() {
 
+  // Hide on initial page load
   $(".error-msg").hide();
-  $("#new-tweet").hide();
   $("#scrollButton").hide();
 
-  //Hide/show buttons on scroll
+  // Hide/show buttons on scroll
   $(window).scroll(function() {
     if ($(this).scrollTop() > 100) {
       $('button[name="composeButton"]').fadeOut();
@@ -108,18 +108,18 @@ $(document).ready(function() {
     }
   }).trigger('scroll');
 
-  //Slides up and down when button is clicked
-  $('button[name="composeButton"]').on('click', function(event) {
+  // Compose tweet form slides up and down when button is clicked
+  $('button[name="composeButton"]').on('click', function() {
     if ($("#new-tweet").is(":visible")) {
-      $("#new-tweet").slideUp(400);
+      $("#new-tweet").slideUp();
     } else {
-      $("#new-tweet").slideDown(400);
+      $("#new-tweet").slideDown();
       $('#tweet-text').focus();
     }
   });
 
-  //Scrolls to top of the page when clicked on focuses on the compose tweet textbox
-  $('#scrollButton').on('click', function(event) {
+  // Scrolls to top of the page when clicked on and focuses on the compose tweet textbox
+  $('#scrollButton').on('click', function() {
     $("html").animate({ scrollTop: 0 }, "medium");
     $("#new-tweet").slideDown(400);
     $('#tweet-text').focus();
@@ -130,6 +130,5 @@ $(document).ready(function() {
     let data = $(this).find('#tweet-text').val();
     let dataSerialized = $(this).serialize();
     postTweet(data, dataSerialized);
-
   });
-});
+}); // document ready

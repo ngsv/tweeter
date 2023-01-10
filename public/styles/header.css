@@ -1,17 +1,18 @@
 .navHeader {
-  height: 425px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 500px;
   width: 100%;
+  padding-top: 80px;
   background-image: url("../images/asfalt-dark.png");
   background-color: #598392;
   color: #FFFFFF;
 }
 
 .headerImg {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-top: 115px;
-  margin: 0;
+  padding: 0;
 }
 
 .headerName {
@@ -31,4 +32,13 @@
 
 .lastName {
   font-weight: 300;
+}
+
+@media screen and (min-width: 1024px) {
+  body .navHeader {
+    height: 400px;
+    margin: 200px 8% 0 4%;
+    padding: 0;
+    width: 40%;
+  }
 }

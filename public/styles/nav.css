@@ -1,11 +1,8 @@
 nav {
   display: flex;
   position: fixed;
-  top: 0;
   justify-content: space-between;
   align-items: center;
-  margin: 0;
-  z-index: 1;
   height: 80px;
   width: 100%;
   background-color: #5F4B66;
@@ -14,30 +11,22 @@ nav {
 }
 nav span {
   font-family: "Bungee", cursive;
+  font-size: 2em;
 }
 nav button {
   background: none;
   border: none;
   cursor: pointer;
 }
-nav .logo {
-  margin-top: 20px;
-  font-size: 30px;
-}
-nav .navbarText {
-  margin-top: 5px;
-}
-nav .navNewTweet {
+nav p {
   margin: 0;
-  margin-top: 0px;
   color: #FFFFFF;
 }
 nav .fa-angle-double-down {
   display: flex;
-  margin: 5px 0 0 0;
-  padding: 0;
-  color: #B3C9D0;
   justify-content: center;
+  margin-top: 5px;
+  color: #B3C9D0;
 }
 nav .bounce {
   animation: bounce 2.5s infinite;

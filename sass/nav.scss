@@ -3,19 +3,17 @@
 nav {
   display: flex;
   position: fixed;
-  top: 0;
   justify-content: space-between;
   align-items: center;
-  margin: 0;
-  z-index: 1;
   height: 80px;
   width: 100%;
   background-color: $nav-bg-color;
   color: $heading-font-color;
   padding: 0 2em;
 
-  span {
+  span { // Tweeter
     font-family: $heading-font;
+    font-size: 2em;
   }
 
   button {
@@ -24,29 +22,19 @@ nav {
     cursor: pointer;
   }
 
-  .logo {
-    margin-top: 20px;
-    font-size: 30px;
-  }
-
-  .navbarText {
-    margin-top: 5px;
-  }
-
-  .navNewTweet {
+  p {
     margin: 0;
-    margin-top: 0px;
-    color: $heading-font-color;
+    color: $heading-font-color
   }
 
   .fa-angle-double-down {
     display: flex;
-    margin: 5px 0 0 0;
-    padding: 0;
-    color: $accent-color;
     justify-content: center;
+    margin-top: 5px;
+    color: $accent-color;
   }
 
+  // Animation
   .bounce {
     animation: bounce 2.5s infinite;
   }
@@ -62,5 +50,4 @@ nav {
       transform: translateY(0);
     }
   }
-
-}
+} // nav

@@ -1,28 +1,22 @@
 #new-tweet {
   width: 100%;
-  color: #545149;
   margin-top: 50px;
 }
 #new-tweet label {
-  font-size: 24px;
+  font-size: 1.4em;
 }
 
 #tweet-text {
-  display: flex;
   background-color: #f4f1ec;
-  border-style: none;
-  border-bottom-style: solid;
-  border-bottom-width: 3px;
+  border: none;
+  border-bottom: solid 3px;
   border-color: #545149;
+  width: 100%;
+  margin-top: 0.5em;
   padding-bottom: 15px;
   font-weight: 600;
   resize: none;
-  width: 100%;
   outline: none;
-}
-
-::placeholder {
-  color: #545149;
 }
 
 .error-msg {
@@ -41,13 +35,12 @@
 .tweetButton {
   background-color: #5F4B66;
   color: #FFFFFF;
-  border-style: none;
-  padding: 6px 10px;
+  border: none;
+  padding: 0.5em 0.7em 0.35em;
 }
 
 .counter {
   display: flex;
   margin-right: 10px;
   align-items: center;
-  justify-content: center;
 }

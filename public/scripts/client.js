@@ -1,22 +1,13 @@
 /* eslint-env jquery */
 
 /*
- * Client-side JS logic goes here
+ * Client-side JS logic
  * jQuery is already loaded
- * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
-
-//Escape Function
-const escape = function (str) {
-  let div = document.createElement("div");
-  div.appendChild(document.createTextNode(str));
-  return div.innerHTML;
-};
 
 const createTweetElement = (tweet) => {
   const $tweet = $(`
     <article class="tweet-article">
-
       <header class="tweet-header">
         <div class="tweet-user">
           <img src="${tweet.user.avatars}">
@@ -24,26 +15,28 @@ const createTweetElement = (tweet) => {
         </div>
         <h3 class="tweet-article-handle">${tweet.user.handle}</h3>
       </header>
+  `);
 
-      <p class="tweet-article-tweet">${escape(tweet.content.text)}</p>
+  const $content = $('<p class="tweet-article-tweet">').text(tweet.content.text);
+
+  const $tweetFooter = $(`
       <hr>
 
       <footer class="tweet-footer">
-
         <p class="footer-date">
             ${timeago.format(tweet.created_at)}
         </p>
-
         <div class="footer-icons">
           <i class="fas fa-flag"></i>
           <i class="fas fa-retweet"></i>
           <i class="fas fa-heart"></i>
         </div>
-
       </footer>
-
     </article>
   `);
+
+  $tweet.append($content);
+  $tweet.append($tweetFooter);
   return $tweet;
 };
 

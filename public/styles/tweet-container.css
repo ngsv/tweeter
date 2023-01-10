@@ -1,9 +1,7 @@
 article {
-  display: block;
-  border-style: solid;
-  border-width: 3px;
+  border: solid 3px;
   height: 100%;
-  width: 100%;
+  margin: 20px 0;
 }
 
 hr {
@@ -15,30 +13,21 @@ hr {
 #tweets-container {
   display: flex;
   flex-direction: column;
-  margin: 50px 0 50px 0;
+  margin: 50px 0;
 }
 
-.new-tweet {
-  margin-top: 25px;
-}
-
-.tweet-article {
-  margin: 30px 0;
-}
-
-.tweet-article:hover {
-  box-shadow: 8px 8px #E8C4CA;
+article:hover {
+  box-shadow: 8px 8px 1px #E8C4CA;
 }
 
 .tweet-header {
   display: flex;
   justify-content: space-between;
-  padding: 25px 30px 30px;
+  padding: 25px 30px 30px 30px;
 }
 
 .tweet-article-name {
-  margin: 0;
-  margin-left: 15px;
+  margin: 0 0 0 15px;
   font-weight: 300;
 }
 
@@ -55,26 +44,24 @@ hr {
 .tweet-article-tweet {
   margin: 0;
   font-weight: 600;
-  padding: 0 35px 30px 35px;
+  padding: 10px 35px 20px 35px;
 }
 
 .tweet-footer {
   display: flex;
   justify-content: space-between;
   padding: 10px 40px 25px 40px;
+  font-size: 15px;
 }
 
 .footer-date {
   margin: 0;
-  font-size: 15px;
   font-weight: 600;
 }
 
 .footer-icons {
   display: flex;
   align-items: flex-end;
-  margin: 0;
-  font-size: 15px;
   color: #5F4B66;
 }
 

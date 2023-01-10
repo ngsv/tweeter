@@ -21,28 +21,22 @@ body {
 main {
   display: flex;
   flex-direction: column;
-  background-color: $bg-color;
-  width: 90vw;
+  width: 90%;
   margin: 0 auto;
 }
 
 #scrollButton {
   position: fixed;
   right: 40px;
-  bottom: 30px;
+  bottom: 40px;
   width: 75px;
   height: 75px;
   background-color: red;
   border: none;
-  text-align: center;
-  justify-content: center;
-  text-decoration: none;
-  margin: 0;
-  padding: 0;
   border-radius: 100%;
+  animation: bounce 2.5s infinite;
 
   i {
-    margin: 0;
     padding: 0;
     font-size: 32px;
     color: $heading-font-color;
@@ -53,19 +47,20 @@ main {
 #scrollButton:hover {
   cursor: pointer;
 
-  i{
+  i {
     color: $header-bg-color;
   }
 
 }
 
+// Media queries
 @media screen and (min-width: 1024px) {
   body {
     display: flex;
     flex-direction: row;
   }
 
-  body .container {
-    margin: 100px 50px 0 0;
+  body main {
+    margin: 100px 2.25% 0 0;
   }
 }

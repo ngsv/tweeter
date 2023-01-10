@@ -1,24 +1,24 @@
 [
   {
     "user": {
-      "name": "Newton",
+      "name": "Theodor",
       "avatars": "https://i.imgur.com/73hZDYK.png",
-      "handle": "@SirIsaac"
+      "handle": "@DrSeuss"
     },
     "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
+      "text": "I meant what I said and I said what I meant"
     },
-    "created_at": 1673206147400
+    "created_at": 1673208475845
   },
   {
     "user": {
-      "name": "Descartes",
+      "name": "Hamlet",
       "avatars": "https://i.imgur.com/nlhLi3I.png",
-      "handle": "@rd"
+      "handle": "@Prince"
     },
     "content": {
-      "text": "Je pense, donc je suis"
+      "text": "We know what we are, but know not what we may be"
     },
-    "created_at": 1673292547400
+    "created_at": 1673294875845
   }
 ]
